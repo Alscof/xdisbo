@@ -20,10 +20,13 @@ import streamlit as st
 
 from datetime import date
 
+from datetime import date
+
 today = date.today()
 
-
-DDGsearch = DuckDuckGoSearchRun()
+wrapper = DuckDuckGoSearchAPIWrapper(time="d", max_results=10)
+DDGsearch = DuckDuckGoSearchResults(api_wrapper=wrapper, backend="news", source="news")
+#DDGsearch = DuckDuckGoSearchRun()
 
 tools = [
     Tool(
@@ -31,6 +34,7 @@ tools = [
         func=DDGsearch,
         description="A search engine. Useful for when you need to answer questions about current events. Input should be a search query."
     )]
+
 
 api_key = st.secrets["API_KEY"]
 api_base = st.secrets["API_BASE"]
@@ -84,9 +88,4 @@ def get_response(user_input: str) -> str:
     return output_1
 
 
-
-
-
-if __name__ == '__main__':
-    main()
 
