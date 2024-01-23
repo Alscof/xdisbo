@@ -16,10 +16,6 @@ from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langchain.agents import initialize_agent, load_tools, AgentType
 import streamlit as st
 
-
-
-from datetime import date
-
 from datetime import date
 
 today = date.today()
@@ -87,5 +83,6 @@ def get_response(user_input: str) -> str:
 
     return output_1
 
-
+if __name__ == '__main__':
+    main()
 
