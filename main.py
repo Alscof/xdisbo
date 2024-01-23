@@ -1,6 +1,5 @@
 from typing import Final
 import os
-from dotenv import load_dotenv
 from discord import Intents, Client, Message
 from responses import get_response
 from langchain_community.tools import DuckDuckGoSearchRun
@@ -9,8 +8,6 @@ import streamlit as st
 
 st.title('bot')
 # STEP 0: LOAD OUR TOKEN FROM SOMEWHERE SAFE
-load_dotenv()
-TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
 os.environ["DISCORD_TOKEN"] = st.secrets["DISCORD_TOKEN"]
 TOKEN: Final[str] = os.environ["DISCORD_TOKEN"]
 
