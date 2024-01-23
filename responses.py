@@ -1,11 +1,10 @@
 import time
 import os
 from langchain.tools import tool
+from crewai import Agent, Task, Process, Crew
 from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
-import streamlit as st
-
-from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.llms import Together
 
 from langchain.tools import Tool
 from langchain.llms import OpenAI
@@ -14,7 +13,8 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import load_tools
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain.schema import HumanMessage, SystemMessage
-
+from langchain.tools import DuckDuckGoSearchResults
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langchain.agents import initialize_agent, load_tools, AgentType
 from langchain.llms import OpenAI
 
@@ -32,10 +32,10 @@ tools = [
         description="A search engine. Useful for when you need to answer questions about current events. Input should be a search query."
     )]
 
-api_key = "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"
-api_base = "https://openrouter.ai/api/v1"
+api_key = st.secrets["API_KEY"]
+api_base = st.secrets["API_BASE"]
 model = "openchat/openchat-7b"
-os.environ["SERPAPI_API_KEY"] = 'cf4eed26ba5a4f51f043995902172b1e0538343008b6365b0f0cb332997a0b7e'
+os.environ["SERPAPI_API_KEY"] = st.secrets["SERPAPI_API_KEY"]
 
 # To Load Local models through Ollama
 mistral = ChatOpenAI(
