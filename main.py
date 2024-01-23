@@ -2,7 +2,7 @@ from typing import Final
 import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message
-from responses2 import get_response
+from responses import get_response
 from langchain_community.tools import DuckDuckGoSearchRun
 import streamlit as st
 
