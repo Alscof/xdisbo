@@ -1,5 +1,6 @@
 discord
 discord.py
+dotenv
 duckduckgo_search
 langchain
 langchain-community
