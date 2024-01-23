@@ -7,6 +7,13 @@ from langchain_community.tools import DuckDuckGoSearchRun
 import streamlit as st
 
 
+st.title('bot')
+# STEP 0: LOAD OUR TOKEN FROM SOMEWHERE SAFE
+
+os.environ["DISCORD_TOKEN"] = st.secrets["DISCORD_TOKEN"]
+TOKEN: Final[str] = os.environ["DISCORD_TOKEN"]
+
+
 # STEP 1: BOT SETUP
 intents: Intents = Intents.default()
 intents.message_content = True  # NOQA
@@ -56,5 +63,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-
 
