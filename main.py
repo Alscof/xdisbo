@@ -1,6 +1,7 @@
 from typing import Final
 import os
 from discord import Intents, Client, Message
+from dotenv import load_dotenv
 from responses import get_response
 from langchain_community.tools import DuckDuckGoSearchRun
 import streamlit as st
