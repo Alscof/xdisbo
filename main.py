@@ -58,7 +58,7 @@ async def on_message(message: Message) -> None:
 
 # STEP 5: MAIN ENTRY POINT
 def main() -> None:
-    client.run(token="MTE5NTU0MjE4NTAzMDk4Mzc3MQ.GFIzSd.uXnOIGxJ8rt8sRjHvWzXtcXyHCnK8UPmMPK50E")
+    client.run(token=st.secrets["DISCORD_TOKEN"])
 
 
 if __name__ == '__main__':
