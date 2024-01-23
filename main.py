@@ -8,8 +8,8 @@ import streamlit as st
 
 st.title('bot')
 # STEP 0: LOAD OUR TOKEN FROM SOMEWHERE SAFE
-os.environ["DISCORD_TOKEN"] = st.secrets["DISCORD_TOKEN"]
-TOKEN = "MTE5NTU0MjE4NTAzMDk4Mzc3MQ.GFIzSd.uXnOIGxJ8rt8sRjHvWzXtcXyHCnK8UPmMPK50E"
+load_dotenv()
+TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
 
 # STEP 1: BOT SETUP
 intents: Intents = Intents.default()
