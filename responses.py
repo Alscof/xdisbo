@@ -5,6 +5,7 @@ from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain_community.llms import Together
 from langchain.llms import OpenAI
+from langchain.tools import Tool
 from langchain.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
 from langchain.agents import load_tools
