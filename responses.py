@@ -32,10 +32,10 @@ tools = [
         description="A search engine. Useful for when you need to answer questions about current events. Input should be a search query."
     )]
 
-os.environ[ "api_key"] = st.secrets["api_key"]
+api_key = "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"
 api_base = "https://openrouter.ai/api/v1"
 model = "openchat/openchat-7b"
-os.environ[ "SERPAPI_API_KEY"] = st.secrets["SERPAPI_API_KEY"]
+os.environ["SERPAPI_API_KEY"] = 'cf4eed26ba5a4f51f043995902172b1e0538343008b6365b0f0cb332997a0b7e'
 
 # To Load Local models through Ollama
 mistral = ChatOpenAI(
