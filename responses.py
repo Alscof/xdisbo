@@ -83,5 +83,6 @@ def get_response(user_input: str) -> str:
 
     return output_1
 
-
+if __name__ == '__main__':
+    main()
 
