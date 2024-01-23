@@ -1,12 +1,9 @@
 import time
 import os
 from langchain.tools import tool
-from crewai import Agent, Task, Process, Crew
 from langchain_openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain_community.llms import Together
-
-from langchain.tools import Tool
 from langchain.llms import OpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
@@ -16,7 +13,7 @@ from langchain.schema import HumanMessage, SystemMessage
 from langchain.tools import DuckDuckGoSearchResults
 from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langchain.agents import initialize_agent, load_tools, AgentType
-from langchain.llms import OpenAI
+
 
 from datetime import date
 
